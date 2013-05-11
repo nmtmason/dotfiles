@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+git submodule init
+git submodule update
+
 for file in .*; do
   if [ "$file" != "." ] && [ "$file" != ".." ] && [ "$file" != ".git" ]; then
     echo "Copying $file"
