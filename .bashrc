@@ -8,7 +8,6 @@ export PATH="$HOME/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 # Application specific
 export PATH="$(cd $(which heroku)/..; pwd):$PATH"
 export PATH="$(cd $(which ruby)/..; pwd):$PATH"
-export PATH="vendor/bundle/bin:$PATH"
 export PATH="/usr/local/share/npm/bin:$PATH"
 source /usr/local/etc/profile.d/z.sh
 
