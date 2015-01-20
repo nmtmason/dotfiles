@@ -1,15 +1,14 @@
 #!/usr/bin/env bash
 
-git submodule init
-git submodule update
-
 for file in .*; do
-  if [ "$file" != "." ] && [ "$file" != ".." ] && [ "$file" != ".git" ] && [ "$file" != ".gitmodules" ]; then
+  if [ "$file" != "." ] && [ "$file" != ".." ] && [ "$file" != ".git" ]; then
     echo "Copying $file"
     rm -rf "$HOME/$file"
     cp -r "$file" "$HOME/$file"
   fi
 done
+
+git clone https://github.com/gmarik/Vundle.vim.git "$HOME/.vim/bundle/Vundle.vim"
 
 vim +BundleInstall +qall
 
