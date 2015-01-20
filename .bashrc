@@ -104,5 +104,5 @@ function _git_status {
   echo "!"
 }
 
-export PS1="\$(fg_color 2)\W\$(reset_color) \$(_vcs_info) ) "
+export PS1="\$(fg_color 2)\W\$(reset_color) \$(_vcs_info)) "
 
