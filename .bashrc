@@ -2,14 +2,13 @@
 set -o vi
 export PAGER=less
 export EDITOR=vim
-export TERM="screen-256color"
 export PATH="$HOME/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+shopt -s checkwinsize
 
-# Application specific
-export PATH="$(cd $(which heroku)/..; pwd):$PATH"
-export PATH="$(cd $(which ruby)/..; pwd):$PATH"
-export PATH="/usr/local/share/npm/bin:$PATH"
-source /usr/local/etc/profile.d/z.sh
+# Directory listing colors
+if [ -e ~/.dircolors ]; then
+  eval $(dircolors -b ~/.dircolors)
+fi
 
 # History
 export HISTCONTROL=ignoredups:ignorespace
@@ -21,23 +20,10 @@ shopt -s cmdhist
 shopt -s histappend
 
 # Aliases
-case $(uname -s) in
-  Darwin)
-    alias ls="ls -lhFG"
-  ;;
-  Linux)
-    alias ls="ls --color=always -hlF"
-  ;;
-esac
-alias l='ls'
+alias ls='ls --color=auto -hlF'
 alias la='ls -a'
 alias grep='grep --color=auto'
 alias vi='vim'
-alias psg='ps -ef | grep'
-alias df='df -h'
-alias du='du -h'
-alias session='tmux new-session -s'
-alias attach='tmux attach-session -t'
 
 # Functions
 function mcd() {
@@ -54,7 +40,7 @@ function upsearch() {
   done
 }
 
-extract() {
+function extract() {
   if [ -f "$1" ] ; then
     case "$1" in
       *.tar.bz2) tar xvjf "$1" ;;
@@ -118,6 +104,5 @@ function _git_status {
   echo "!"
 }
 
-export PS1="\$(bg_color 0)\$(fg_color 7)\w\$(reset_color) \$(_vcs_info)
-% "
+export PS1="\$(fg_color 2)\W\$(reset_color) \$(_vcs_info) ) "
 
