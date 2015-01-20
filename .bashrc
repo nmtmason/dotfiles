@@ -6,8 +6,8 @@ export PATH="$HOME/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 shopt -s checkwinsize
 
 # Directory listing colors
-if [ -e ~/.dircolors ]; then
-  eval $(dircolors -b ~/.dircolors)
+if [ -e "$HOME/.dircolors" ]; then
+  eval $(dircolors -b "$HOME/.dircolors")
 fi
 
 # History
