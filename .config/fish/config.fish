@@ -2,8 +2,8 @@
 set fish_greeting ""
 
 # Directory listing colors
-if test -f ~/.dircolors
-  eval (dircolors -c ~/.dircolors)
+if test -f {$HOME}/.dircolors
+  eval (dircolors -c {$HOME}/.dircolors)
 end
 
 # Aliases
@@ -21,5 +21,13 @@ end
 
 function vi
   vim $argv
+end
+
+# Prompt
+function fish_prompt
+  set_color $fish_color_cwd
+  echo -n (basename $PWD)
+  set_color normal
+  echo -n ' ) '
 end
 
