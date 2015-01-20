@@ -1,22 +1,17 @@
-" Vundle
+" Plugins
 set nocompatible
 filetype off
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-Bundle 'https://github.com/kien/ctrlp.vim'
-Bundle 'https://github.com/tpope/vim-markdown'
-Bundle 'https://github.com/pangloss/vim-javascript'
-Bundle 'https://github.com/altercation/vim-colors-solarized'
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'gmarik/Vundle.vim'
+Plugin 'kien/ctrlp.vim'
+Plugin 'tpope/vim-fireplace'
+Plugin 'guns/vim-clojure-static'
+call vundle#end()
 filetype plugin indent on
 
-" Plugin configuration
-let g:ctrlp_prompt_mappings = {
-  \ 'AcceptSelection("e")': [],
-  \ 'AcceptSelection("t")': ['<cr>', '<c-m>'],
-  \ }
-let g:html_indent_inctags = "html,body,head,tbody"
-let g:html_indent_script1 = "inc"
-let g:html_indent_style1 = "inc"
+" Plugin behaviour
+let g:ctrlp_map = '<C-p>'
 
 " General
 set autoread
@@ -71,13 +66,13 @@ set colorcolumn=80
 set scrolloff=5
 set showtabline=2
 
-" Syntax
-syntax enable
-set background=dark
-try
-  colorscheme solarized
-catch /^Vim\%((\a\+)\)\=:E185/
-endtry
+" Syntax - rely on the terminal controlling colors, but override some defaults
+hi StatusLine guifg=White guibg=Black gui=None
+hi StatusLine ctermfg=White ctermbg=Black cterm=None
+hi ColorColumn guifg=White guibg=Black gui=None
+hi ColorColumn ctermfg=White ctermbg=Black cterm=None
+hi LineNr guifg=White guibg=Black gui=None
+hi LineNr ctermfg=White ctermbg=Black cterm=None
 
 " Rename tabs to show tab number
 if exists("+showtabline")
@@ -121,3 +116,4 @@ if exists("+showtabline")
   set showtabline=1
   highlight link TabNum Special
 endif
+
