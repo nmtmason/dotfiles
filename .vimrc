@@ -116,4 +116,3 @@ if exists("+showtabline")
   set showtabline=1
   highlight link TabNum Special
 endif
-

@@ -7,4 +7,3 @@
   slog = log --graph --date=relative --pretty=format:'%h %an:%d %s (%cr)'
 [color]
   ui = true
-

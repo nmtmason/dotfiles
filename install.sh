@@ -15,4 +15,3 @@ vim +BundleInstall +qall
 
 echo "Finished."
 exit 0
-
