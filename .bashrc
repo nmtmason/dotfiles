@@ -70,39 +70,4 @@ function extract() {
 function fg_color { tput setaf "$1"; }
 function bg_color { tput setab "$1"; }
 function reset_color { tput sgr0 "$1"; }
-
-function _vcs_info {
-  local prompt
-  if [ $(upsearch ".git") ]; then
-    prompt="$prompt $(reset_color)$(_git_prefix)$(reset_color)"
-    prompt="$prompt $(bg_color 0)$(fg_color 7)$(_git_symbol)$(reset_color)"
-    prompt="$prompt $(bg_color 0)$(fg_color 7)$(_git_branch)$(reset_color)"
-    prompt="$prompt $(bg_color 1)$(fg_color 7)$(_git_status)$(reset_color)"
-  fi
-  echo $prompt
-}
-function _git_prefix {
-  echo "on"
-}
-function _git_symbol {
-  echo "±"
-}
-function _git_branch {
-  local ref
-  ref=$(git symbolic-ref HEAD 2> /dev/null) ||
-    ref=$(git rev-parse --short HEAD 2> /dev/null) ||
-    return
-  ref=${ref#refs/heads/}
-  echo "$ref"
-}
-function _git_status {
-  local status
-  status=$(git status -s 2> /dev/null)
-  if [ -z "$status" ]; then
-    return
-  fi
-  echo "!"
-}
-
-export PS1="\$(fg_color 2)\W\$(reset_color) \$(_vcs_info)) "
-
+export PS1="\$(fg_color 2)\W\$(reset_color)) "
