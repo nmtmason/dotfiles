@@ -1,9 +1,7 @@
 [user]
   name = Nicholas Mason
   email = nmt.mason@googlemail.com
-[alias]
-  co = checkout
-  cob = checkout -b
-  slog = log --graph --date=relative --pretty=format:'%h %an:%d %s (%cr)'
 [color]
   ui = true
+[core]
+	editor = atom --wait
