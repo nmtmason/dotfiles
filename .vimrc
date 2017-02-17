@@ -1,14 +1,4 @@
-" Plugins
-set nocompatible
-filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'gmarik/Vundle.vim'
-call vundle#end()
 filetype plugin indent on
-
-" Plugin behaviour
-let g:ctrlp_map = '<C-p>'
 
 " General
 set autoread
@@ -62,11 +52,3 @@ set cursorline
 set colorcolumn=80
 set scrolloff=5
 set showtabline=2
-
-" Syntax - rely on the terminal controlling colors, but override some defaults
-hi StatusLine guifg=White guibg=Black gui=None
-hi StatusLine ctermfg=White ctermbg=Black cterm=None
-hi ColorColumn guifg=White guibg=Black gui=None
-hi ColorColumn ctermfg=White ctermbg=Black cterm=None
-hi LineNr guifg=White guibg=Black gui=None
-hi LineNr ctermfg=White ctermbg=Black cterm=None
