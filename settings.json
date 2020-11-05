@@ -1,0 +1,71 @@
+{
+  "editor.fontFamily": "'JetBrains Mono', Consolas, 'Courier New', monospace",
+  "editor.fontLigatures": true,
+  "editor.formatOnSave": true,
+  "editor.minimap.enabled": false,
+  "editor.rulers": [80, 120],
+  "editor.renderWhitespace": "all",
+  "editor.renderControlCharacters": true,
+  "explorer.autoReveal": false,
+  "files.exclude": {
+    "**/bin": true,
+    "**/obj": true,
+    "**/StyleCop.Cache": true
+  },
+  "files.autoSave": "off",
+  "tailwindCSS.includeLanguages": {
+    "typescript": "html",
+    "typescriptreact": "html"
+  },
+  "workbench.activityBar.visible": true,
+  "workbench.colorCustomizations": {
+    "[Default Light+]": {
+      "activityBar.background": "#ffffff",
+      "activityBar.foreground": "#888888",
+      "activityBar.border": "#d9d9d9",
+      "editorGroup.border": "#d9d9d9",
+      "editorGroupHeader.border": "#d9d9d9",
+      "editorGroupHeader.tabsBorder": "#d9d9d9",
+      "menu.border": "#d9d9d9",
+      "sideBar.border": "#d9d9d9",
+      "statusBar.border": "#d9d9d9",
+      "tab.border": "#d9d9d9",
+      "titleBar.border": "#d9d9d9",
+      "tab.activeBorderTop": "#f9826c"
+    }
+  },
+  "workbench.colorTheme": "GitHub Light",
+  "workbench.editor.enablePreview": false,
+  "workbench.iconTheme": "vscode-icon-theme",
+  "workbench.sideBar.location": "right",
+  "workbench.startupEditor": "newUntitledFile",
+  "workbench.tree.indent": 16,
+  "workbench.tree.renderIndentGuides": "always",
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
+  }
+}
